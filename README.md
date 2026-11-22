@@ -1,10 +1,10 @@
 # PicFlex Studio
 
-> **A free, privacy-first browser-based image and video editing & compression studio.**
+> A free, privacy-first browser-based image and video editing & compression studio.
 
-PicFlex Studio lets you **edit, enhance, resize, crop, compress, and export images and videos directly in your browser**.
+PicFlex Studio lets you edit, enhance, resize, crop, compress, and export images and videos directly in your browser.
 
-No account. No watermarks. No server-side media uploads.
+**No account. No watermarks. No server-side media uploads.**
 
 All core media processing happens locally on the user's device.
 
@@ -19,7 +19,7 @@ PicFlex provides a complete image editing workspace with real-time preview.
 #### Resize & Scaling
 
 - Custom width and height
-- Quick scaling from **10% to 200%**
+- Quick scaling from 10% to 200%
 - Dimension presets
 - Fit
 - Fill
@@ -46,7 +46,7 @@ Built-in presets for common platforms:
 - `3:2`
 - `2:3`
 - Interactive crop workspace
-- Drag/resize crop handles
+- Drag and resize crop handles
 - Reset crop bounding box
 - Finalize crop
 
@@ -67,9 +67,9 @@ Fine-grained controls for:
 
 ### ✨ Auto Enhance
 
-A one-click **Auto Enhance** option automatically applies a combination of enhancement parameters to improve the image.
+A one-click Auto Enhance option automatically applies a combination of enhancement parameters to improve the image.
 
-The editor also provides individual controls for manually tuning the result.
+Individual controls are also available for manual adjustments.
 
 ### 🔄 Transformations
 
@@ -82,7 +82,7 @@ The editor also provides individual controls for manually tuning the result.
 
 ### 🖼️ Frames & Borders
 
-Multiple frame styles are available:
+Available frame styles:
 
 - Modern Border
 - Retro Polaroid
@@ -97,7 +97,7 @@ Frame customization includes:
 - Polaroid text
 - Neon glow size
 
-Available frame colors include:
+Available frame colors:
 
 - White
 - Dark
@@ -109,9 +109,9 @@ Available frame colors include:
 
 ### 🗜️ Image Compression
 
-Control the output file size with an adjustable compression slider.
+Control output file size using an adjustable compression slider.
 
-Features:
+Features include:
 
 - Compression level control
 - Estimated output file size
@@ -123,8 +123,8 @@ Features:
 
 Export edited images directly from the browser as:
 
-- **JPEG**
-- **WebP**
+- JPEG
+- WebP
 
 No server upload is required.
 
@@ -144,7 +144,7 @@ Supports:
 - WebM
 - MOV
 
-Users can upload a video directly from their device and preview it in the browser.
+Videos can be selected directly from the user's device and previewed in the browser.
 
 ### ✂️ Video Trimming
 
@@ -172,24 +172,24 @@ Filters can be individually reset or completely reset.
 
 ### 🗜️ Video Compression
 
-Adjust the compression level to balance:
+Adjust compression to balance:
 
 - Video quality
 - Output file size
 - Bitrate
 
-The application also provides an **estimated output file size** before export.
+The application also provides an estimated output file size before export.
 
 ### 📦 Video Export
 
 Export processed videos as:
 
-- **MP4 (H.264)**
-- **WebM (VP9)**
+- MP4 (H.264)
+- WebM (VP9)
 
-WebM can use native browser recording, while MP4 conversion uses **FFmpeg WebAssembly** when required.
+WebM can use native browser recording, while MP4 conversion uses FFmpeg WebAssembly when required.
 
-The application displays export progress while processing.
+The application displays export progress during processing.
 
 ---
 
@@ -198,32 +198,35 @@ The application displays export progress while processing.
 PicFlex is designed around local processing.
 
 ```text
-Your Device
-     │
-     ├── Image
-     │      ↓
-     │   Canvas Processing
-     │      ↓
-     │   Edited Image
-     │
-     └── Video
-            ↓
-       Canvas + MediaRecorder
-            ↓
-        FFmpeg WASM
-            ↓
-       Edited Video
+                    Your Device
+                         │
+              ┌──────────┴──────────┐
+              │                     │
+            Image                 Video
+              │                     │
+              ▼                     ▼
+       Canvas Processing     MediaRecorder API
+              │                     │
+              ▼                     ▼
+        Edited Image          FFmpeg WASM
+              │                     │
+              └──────────┬──────────┘
+                         ▼
+                    Export File
+                         │
+                         ▼
+                    User Device
 ```
 
-Your media files are processed in the browser rather than being uploaded to a backend server for editing.
+Your images and videos are processed in the browser instead of being uploaded to a backend server for editing.
 
-This means your images and videos can remain on your device during the editing workflow.
+This keeps the media-processing workflow local to the user's device.
 
 ---
 
 # 📧 Contact System
 
-PicFlex includes a dedicated **Contact Us** page powered by **EmailJS**.
+PicFlex includes a dedicated Contact Us page powered by EmailJS.
 
 Users can submit:
 
@@ -251,28 +254,28 @@ EmailJS credentials are supplied through environment variables.
 
 ### Frontend
 
-- **React 19**
-- **JavaScript**
-- **Vite**
-- **React Router**
-- **Tailwind CSS**
-- **Lucide React**
+- React 19
+- JavaScript
+- Vite
+- React Router
+- Tailwind CSS
+- Lucide React
 
 ### Media Processing
 
-- **HTML Canvas API**
-- **MediaRecorder API**
-- **FFmpeg WebAssembly**
-- **Browser File APIs**
+- HTML Canvas API
+- MediaRecorder API
+- FFmpeg WebAssembly
+- Browser File APIs
 
 ### Communication
 
-- **EmailJS**
+- EmailJS
 
 ### Development Tools
 
 - ESLint
-- Vite development server
+- Vite Development Server
 
 ---
 
@@ -281,28 +284,29 @@ EmailJS credentials are supplied through environment variables.
 PicFlex follows a client-side React architecture.
 
 ```text
-                    PicFlex Studio
-                         │
-             ┌───────────┴───────────┐
-             │                       │
-        Image Editor             Video Editor
-             │                       │
-       React State              React State
-             │                       │
-       Canvas API          MediaRecorder API
-             │                       │
-       Image Filters          Video Filters
-             │                       │
-       Resize / Crop          Trim / Compress
-             │                       │
-             └───────────┬───────────┘
-                         │
-                    Export File
-                         │
-                    User Device
+                       PicFlex Studio
+                             │
+                ┌────────────┴────────────┐
+                │                         │
+           Image Editor              Video Editor
+                │                         │
+           React State              React State
+                │                         │
+           Canvas API             MediaRecorder API
+                │                         │
+        Image Processing          Video Processing
+                │                         │
+        Resize / Crop            Trim / Compress
+                │                         │
+                └────────────┬────────────┘
+                             │
+                        Export File
+                             │
+                             ▼
+                        User Device
 ```
 
-The application uses React state to control editing parameters while Canvas and browser media APIs handle the actual processing.
+React state controls editing parameters and UI state, while browser APIs perform the actual media processing.
 
 ---
 
@@ -314,7 +318,6 @@ PicFlex/
 ├── public/
 │
 ├── src/
-│   │
 │   ├── assets/
 │   │   ├── hero.png
 │   │   ├── react.svg
@@ -354,7 +357,7 @@ PicFlex/
 ## 1. Clone the repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/PicFlex.git
+git clone https://github.com/Shiv-Kumar01/PicFlex.git
 ```
 
 ## 2. Enter the project
@@ -380,6 +383,8 @@ VITE_EMAILJS_PUBLIC_KEY=your_public_key
 ```
 
 These variables are required for the Contact Us email functionality.
+
+> Do not commit your `.env` file. Use `.env.example` for sharing the required variable names.
 
 ## 5. Start the development server
 
@@ -433,8 +438,6 @@ Runs ESLint across the project.
 
 # 🧩 Important Technical Concepts
 
-PicFlex demonstrates several useful frontend and browser technologies.
-
 ### Canvas API
 
 Used for image manipulation and rendering operations such as:
@@ -456,15 +459,15 @@ Used to capture processed video frames and generate browser-compatible video out
 
 Used for browser-side MP4 conversion when native browser recording does not provide the required MP4 output.
 
-The FFmpeg core is loaded only when required for MP4 export.
+The FFmpeg core is loaded when required for MP4 export.
 
 ### Object URLs
 
-Browser-generated object URLs are used to preview locally selected video files without uploading them to a server.
+Browser-generated object URLs are used to preview locally selected media without uploading the files to a server.
 
 ### React State
 
-Editing parameters are maintained through React state, allowing the preview to update as users modify editing controls.
+Editing parameters and UI state are maintained through React state, allowing previews and controls to update as users modify editing options.
 
 ### HashRouter
 
@@ -495,7 +498,7 @@ The project focuses on:
 - FFmpeg WebAssembly
 - File handling
 - Real-time previews
-- Compression algorithms and quality trade-offs
+- Compression and quality trade-offs
 - Responsive UI design
 - Privacy-focused application design
 
@@ -515,7 +518,6 @@ Potential improvements include:
 - Batch image processing
 - Batch compression
 - Additional export formats
-- More advanced drag-and-drop interactions
 - Mobile-specific editing controls
 
 ---
@@ -540,4 +542,4 @@ Computer Science Engineering Student
 
 ## ⭐ PicFlex Studio
 
-A lightweight alternative for everyday media processing — **edit locally, keep your files private, and download the result.**
+A lightweight browser-based alternative for everyday media processing — edit locally, keep your files private, and download the result.

@@ -1,10 +1,29 @@
 <!doctype html>
 <html lang="en" class="dark">
   <head>
+    <!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WV2L5M7PLZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-WV2L5M7PLZ');
+</script>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https:; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://api.emailjs.com; media-src 'self' blob:; frame-src 'none'; object-src 'none'" />
+   <meta
+  http-equiv="Content-Security-Policy"
+  content="default-src 'self';
+  script-src 'self' 'unsafe-inline' https://www.googletagmanager.com;
+  style-src 'self' 'unsafe-inline';
+  img-src 'self' data: blob: https: https://www.googletagmanager.com https://*.google-analytics.com;
+  font-src 'self' https://fonts.gstatic.com;
+  connect-src 'self' https://api.emailjs.com https://www.googletagmanager.com https://*.google-analytics.com https://*.google.com;
+  media-src 'self' blob:;
+  frame-src 'none';
+  object-src 'none';"
+/>
     
     <!-- SEO Meta Tags -->
     <title>PicFlex – Free Online Image Compressor, Resizer & Photo Editor</title>
@@ -37,14 +56,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Caveat:wght@400;700&display=swap" rel="stylesheet">
-  <!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-WV2L5M7PLZ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-WV2L5M7PLZ');
-</script>
+  
   </head>
   <body class="bg-slate-950 text-slate-100 min-h-screen font-sans">
     <div id="root"></div>
